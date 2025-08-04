@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <title>Resprite</title>
+  </head>
+  <body>
+    <a href="https://github.com/ninoDeme/resprite" class="github-button">
+      <img src="images/github.png" alt="Ver no github" />
+    </a>
+    <h1>Resprite</h1>
+    <form class="flex-col items-start" onsubmit="event.preventDefault()">
+      <div class="form-field">
+        <label for="input-file">Input File</label>
+        <input type="file" id="input-file" accept="image/*" />
+      </div>
+      <div class="flex-row flex-wrap items-start gap-4">
+        <fieldset>
+          <legend>Offset</legend>
+          <div class="form-field">
+            <label for="input-offset-x">Horizontal</label>
+            <input
+              id="input-offset-x"
+              value="0"
+              name="offset-x"
+              type="number"
+            />
+          </div>
+          <div class="form-field">
+            <label for="input-offset-y">Vertical</label>
+            <input
+              id="input-offset-y"
+              value="0"
+              name="offset-y"
+              type="number"
+            />
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Pixel size</legend>
+          <div class="form-field">
+            <label for="input-size-x">Horizontal</label>
+            <input id="input-size-x" value="10" name="size-x" type="number" />
+          </div>
+          <div class="form-field">
+            <label for="input-size-y">Vertical</label>
+            <input id="input-size-y" value="10" name="size-y" type="number" />
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Output Resolution</legend>
+          <div class="form-field">
+            <label for="input-resolution-x">Width</label>
+            <input
+              id="input-resolution-x"
+              value="64"
+              name="resolution-x"
+              type="number"
+            />
+          </div>
+          <div class="form-field">
+            <label for="input-resolution-y">Height</label>
+            <input
+              id="input-resolution-y"
+              value="64"
+              name="resolution-y"
+              type="number"
+            />
+          </div>
+        </fieldset>
+      </div>
+      <div class="form-field-checkbox">
+        <label for="checkbox-grid">Show Grid</label>
+        <input id="checkbox-grid" name="grid" type="checkbox" />
+      </div>
+      <button id="button-salvar">Save Output</button>
+      <div id="link-container">
+      </div>
+      <div class="separator" aria-hidden></div>
+      <div class="flex-row gap-4 flex-wrap">
+        <div class="flex-col items-start">
+          <div class="form-field">
+            <label for="input-img-zoom">Input Zoom</label>
+            <input
+              id="input-img-zoom"
+              min="1"
+              value="1"
+              name="img-zoom"
+              type="number"
+            />
+          </div>
+          <canvas id="input"></canvas>
+        </div>
+        <div class="flex-col items-start">
+          <div class="form-field">
+            <label for="input-preview-zoom">Preview Zoom</label>
+            <input
+              id="input-preview-zoom"
+              min="1"
+              value="1"
+              name="preview-zoom"
+              type="number"
+            />
+          </div>
+          <canvas id="output"></canvas>
+        </div>
+      </div>
+    </form>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

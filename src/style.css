@@ -1,8 +1,132 @@
-@layer theme, base, components, utilities;
-@import "tailwindcss/theme.css" layer(theme);
-/* @import "tailwindcss/preflight.css" layer(base); */
-@import "tailwindcss/utilities.css" layer(utilities);
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.light {
+  color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #2f2f2f;
+    color: #f2f2f2;
+  }
+
+  a {
+    color: deepskyblue;
+  }
+}
+
+input {
+  background-color: transparent;
+  color: currentColor;
+  border: 1px currentColor solid;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+input[type="number"] {
+  width: 140px;
+}
+
+button {
+  background-color: transparent;
+  color: currentColor;
+  border: 1px currentColor solid;
+  padding: 4px;
+  border-radius: 4px;
+  margin-bottom: 3px;
+  font-size: medium;
+}
+
+button:hover {
+  background-color: rgba(140, 140, 140, 0.4);
+}
 
 canvas {
-    image-rendering: pixelated;
+  image-rendering: pixelated;
+}
+
+.form-field,
+.form-field-checkbox {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 4px;
+  align-items: start;
+}
+
+.form-field-checkbox {
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.items-start {
+  align-items: start;
+}
+
+fieldset {
+  margin-bottom: 6px;
+  border-radius: 4px;
+  max-width: 90dvw;
+  gap: 6px;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+}
+
+.gap-4 {
+  gap: 4px;
+}
+
+.separator {
+  width: 100%;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  border-bottom: 1px solid currentColor;
+}
+
+.github-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  opacity: 0.5;
+  transition: opacity ease-in-out 100ms;
+}
+
+@media (prefers-color-scheme: dark) {
+  .github-button {
+    filter: invert();
+  }
+}
+
+.github-button:hover {
+  opacity: 1;
+}
+
+.github-button > img {
+  width: 32px;
+  height: 32px;
 }
